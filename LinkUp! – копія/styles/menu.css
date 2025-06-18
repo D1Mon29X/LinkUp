@@ -1,0 +1,53 @@
+/* Стилі для меню */
+.menu {
+  display: flex;
+}
+
+.menu button {
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Стилі для мобільного вигляду */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    display: none;
+    flex-direction: column;
+    padding-top: 20px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .drawer button {
+    padding: 20px;
+    border-bottom: 1px solid #444;
+    background-color: transparent;
+    color: white;
+    text-align: left;
+  }
+}
+
+/* Для відкритого меню */
+.drawer.open {
+  display: flex;
+}

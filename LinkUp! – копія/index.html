@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkUp – Знайомства онлайн</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/menu.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="background-collage">
+      <img src="/images/432945_1.jpg" alt="" />
+      <img src="/images/438176_1.jpg" alt="" />
+      <img
+        src="/images/c52316db0969e0df498194c3f829b1ce_large.jpg"
+        alt=""
+      />
+      <img
+        src="/images/depositphotos_136350302-stock-photo-man-gives-gift-to-his.webp"
+        alt=""
+      />
+      <img
+        src="/images/depositphotos_218539052-stock-photo-happy-couple-park-looking-each.webp"
+        alt=""
+      />
+      <img src="/images/DeWatermark.ai_1750184645455.jpeg" alt="" />
+      <img
+        src="/images/f64e57_0a9f2d5de31840cb9020fdf8bcb16421~mv2.jpg"
+        alt=""
+      />
+      <img
+        src="/images/how-to-understand-that-you-are-in-love.1100x600.jpg"
+        alt=""
+      />
+      <img src="/images/image.jpg" alt="" />
+      <img src="/images/wmremove-transformed.jpeg" alt="" />
+      <!-- Додайте свої зображення -->
+    </div>
+    <header>
+      <h1>LinkUp!</h1>
+      <nav>
+        <button id="hamburger-btn" class="hamburger" onclick="toggleHamburgerMenu()">
+          ☰
+        </button>
+        <div id="menu" class="menu">
+          <button onclick="openModal('login')">Увійти</button>
+          <button onclick="openModal('register')">Зареєструватися</button>
+        </div>
+      </nav>
+
+      <!-- Drawer Menu -->
+      <div id="drawer" class="drawer">
+        <span class="close" onclick="toggleHamburgerMenu()">&times;</span>
+        <button onclick="openModal('login')">Увійти</button>
+        <button onclick="openModal('register')">Зареєструватися</button>
+      </div>
+
+      <!-- <nav>
+      <button onclick="openModal('login')">Увійти</button>
+      <button onclick="openModal('register')">Зареєструватися</button>
+    </nav> -->
+    </header>
+
+    <main>
+      <section class="hero">
+        <h2>Зустрічай. Спілкуйся. Закохуйся.</h2>
+        <h4>LinkUp! — простір для справжніх знайомств</h4>
+        <button onclick="openModal('register')">Почати</button>
+      </section>
+    </main>
+
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('login')">&times;</span>
+        <h3>Вхід</h3>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Пароль" />
+        <button>Увійти</button>
+      </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('register')">&times;</span>
+        <h3>Реєстрація</h3>
+        <input type="text" placeholder="Імʼя" />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Пароль" />
+        <button>Зареєструватися</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
