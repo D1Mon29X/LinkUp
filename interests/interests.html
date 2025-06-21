@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Вибір інтересів</title>
+    <style>
+      :root {
+        --primary-color: #e47b7b;
+        --secondary-color: #ffffff;
+        --selected-color: var(--primary-color);
+      }
+      .interest-button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        border: 2px solid var(--primary-color);
+        border-radius: 16px;
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .interest-button.selected {
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Оберіть свої інтереси:</h2>
+
+    <div id="interests-container">
+      <div class="interest-button" data-interest="programming">
+        Програмування
+      </div>
+      <div class="interest-button" data-interest="math">Математика</div>
+      <div class="interest-button" data-interest="physics">Фізика</div>
+      <div class="interest-button" data-interest="movies">Фільми</div>
+      <div class="interest-button" data-interest="history">Історія</div>
+      <div class="interest-button" data-interest="philosophy">Філософія</div>
+      <div class="interest-button" data-interest="english">Англійська</div>
+    </div>
+
+    <script type="module" src="./utils.js"></script>
+    <script type="module" src="./interests.js"></script>
+  </body>
+</html>
