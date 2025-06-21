@@ -1,0 +1,173 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #ffffff, #ffbaba);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #333;
+}
+
+/* Додаємо фон-колаж */
+.background-collage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  z-index: -1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  overflow: hidden;
+  align-items: end;
+  transform: rotate(7deg) scale(1.05) translateX(-50px);
+}
+
+.background-collage::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 111, 111, 0.159); /* М'який темний відтінок */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.background-collage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  opacity: 0.85;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-family: Impact, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif sans-serif;
+  color:#e47b7b;
+}
+
+nav button {
+  font-family: "Leckerli One", cursive;
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #e47b7b;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.hero h2 {
+   font-family: "Leckerli One", cursive;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.hero h4 {
+   font-family: "Leckerli One", cursive;
+  font-size: 1rem;
+  color: #ffffffeb;
+}
+
+.hero button {
+  font-family: "Leckerli One", cursive;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: #e47b7b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 300px;
+  position: relative;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 0.7rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-content button {
+  background: #e47b7b;
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.filter-btn {
+  background-color: #e47b7b;         /* Яскравий кораловий */
+  color: white;                      /* Білий текст */
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: px;               /* Заокруглені кути */
+  text-decoration: none;             /* Без підкреслення */
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.filter-btn:hover {
+  background-color: #e47b7b;         /* Темніший при наведенні */
+  transform: scale(1.05);
+}
