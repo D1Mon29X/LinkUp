@@ -1,4 +1,4 @@
-    import createUserId from '../utils.js';
+    import createUserId from '../utils/utils.js';
 
         const selectedInterests = [];
 
