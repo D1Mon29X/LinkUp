@@ -1,3 +1,5 @@
+import createUserId from './utils/utils.js';
+
 function openModal(type) {
   document.getElementById(type + 'Modal').style.display = 'flex';
 }
@@ -5,8 +7,6 @@ function openModal(type) {
 function closeModal(type) {
   document.getElementById(type + 'Modal').style.display = 'none';
 }
-
-
 
 window.onclick = function(event) {
   // debugger
@@ -36,8 +36,14 @@ function toggleHamburgerMenu() {
   }
 }
 
-window.onload = function() {
+window.onload = async function() {
   showMenu();
+   
+  const userId = localStorage.getItem("userId");
+  if (!userId) {
+      // Якщо userId не існує, створюємо новий
+      localStorage.setItem("userId", JSON.stringify(createUserId()));
+  }
 }
 
 window.onresize = function() {
