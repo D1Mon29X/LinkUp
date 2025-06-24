@@ -43,7 +43,7 @@ window.onload = async function() {
   if (!userId) {
       // Якщо userId не існує, створюємо новий
       localStorage.setItem("userId", JSON.stringify(createUserId()));
-     const randomUsernames = [
+      const randomUsernames = [
         "user123", "coolguy", "happyuser", "testaccount", "exampleuser", "randomname", "user456", "sampleuser", "demoaccount", "username789"
       ];
       const randomIndex = Math.floor(Math.random() * randomUsernames.length);
