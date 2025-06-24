@@ -43,6 +43,35 @@ window.onload = async function() {
   if (!userId) {
       // Якщо userId не існує, створюємо новий
       localStorage.setItem("userId", JSON.stringify(createUserId()));
+     const randoUsernames = [
+        "user123", "coolguy", "happyuser", "testaccount", "exampleuser", "randomname", "user456", "sampleuser", "demoaccount", "username789"
+      ];
+      const randomIndex = Math.floor(Math.random() * randoUsernames.length);
+      const randomUsername = randoUsernames[randomIndex];
+      localStorage.setItem("username", randomUsername);
+      const data = { 
+        userId: localStorage.getItem("userId"),
+        name:randomUsername
+      }
+
+      const stringifiedData = JSON.stringify(data);
+
+      try {
+          const response = await fetch('https://applinkup.pythonanywhere.com/add-users', {
+              method: 'POST',
+              headers: {
+              'Content-Type': 'application/json'
+              },
+              body: stringifiedData
+          })
+
+          if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+
+      } catch (error) {
+          console.error('Network error. Помилка при перетворенні даних:', error);          
+      }
   }
 }
 
