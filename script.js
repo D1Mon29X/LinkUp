@@ -48,7 +48,7 @@ window.onload = async function() {
       ];
       const randomIndex = Math.floor(Math.random() * randomUsernames.length);
       const randomUsername = randomUsernames[randomIndex];
-      localStorage.setItem("username", randomUsername);
+     
       const data = { 
         userId: localStorage.getItem("userId"),
         name:randomUsername
