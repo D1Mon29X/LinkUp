@@ -1,10 +1,11 @@
 import createUserId from './utils/utils.js';
 
-function openModal(type) {
+function openModal(type) { // data-type
+  console.warn('OpenModal called for type:', type);
   document.getElementById(type + 'Modal').style.display = 'flex';
 }
 
-function closeModal(type) {
+function closeModal(type) { // data-type
   document.getElementById(type + 'Modal').style.display = 'none';
 }
 
@@ -36,8 +37,29 @@ function toggleHamburgerMenu() {
   }
 }
 
+function addOpenModalEventListeners(type) {
+   const buttons = document.querySelectorAll(`button[data-type="${type}OpenModal"]`);
+   console.warn('OpenModal buttons found = ', buttons);
+   buttons.forEach(button => {
+        button.addEventListener('click', () => openModal(type));
+    });
+} 
+
+function addCloseModalEventListeners(type) {
+   const spans = document.querySelectorAll(`span[data-type="${type}CloseModal"]`);
+    console.warn('CloseModal spans found = ', spans);
+    spans.forEach(span => {
+        span.addEventListener('click', () => closeModal(type));
+    });
+}
+
 window.onload = async function() {
   showMenu();
+  ['login', 'register'].forEach(type => {
+      addOpenModalEventListeners(type);
+      addCloseModalEventListeners(type);
+  });
+  
    
   const userId = localStorage.getItem("userId");
   if (!userId) {
@@ -48,7 +70,7 @@ window.onload = async function() {
       ];
       const randomIndex = Math.floor(Math.random() * randomUsernames.length);
       const randomUsername = randomUsernames[randomIndex];
-     
+      localStorage.setItem("username", randomUsername);
       const data = { 
         userId: localStorage.getItem("userId"),
         name:randomUsername
