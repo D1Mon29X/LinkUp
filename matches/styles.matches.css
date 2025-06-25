@@ -103,21 +103,21 @@ body {
   background-color: #ffe0e0;
 }
 
-/* Градієнт тільки на першу секцію */
-.gradient-overlay {
-  position: relative;
+.gradient-overlay{
+    position: relative;
   z-index: 0;
 }
-
 .gradient-overlay::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(255, 192, 203, 0.5), rgba(255, 255, 255, 0));
-  z-index: 2;
+  /* background: linear-gradient(to top, rgba(255, 192, 203, 0.5), rgba(255, 255, 255, 0)); */
+   background: linear-gradient(to top, rgba(202, 106, 106, 0.601), rgba(255, 255, 255, 0.113));
+  z-index: 1;
   pointer-events: none;
   border-radius: 12px;
 }
+
 .profile-card.small{
   width: calc(var(--profile-card-img-width) * var(--profile-card-small-ratio));
 }
