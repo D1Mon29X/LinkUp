@@ -76,7 +76,7 @@ body {
   position: absolute;
   inset: 0;
   /* background: linear-gradient(to top, rgba(255, 192, 203, 0.5), rgba(255, 255, 255, 0)); */
-   background: linear-gradient(to top, rgba(202, 106, 106, 0.601), rgba(255, 255, 255, 0.293));
+   background: linear-gradient(to top, rgba(202, 106, 106, 0.601), rgba(255, 255, 255, 0.113));
   z-index: 1;
   pointer-events: none;
   border-radius: 12px;
